@@ -1,0 +1,15 @@
+hr{
+    border-top: 3px double #8c8b8b;
+    margin:0px;
+    padding:0px;
+}
+.mwd-title{
+color:white;
+font-size:52px;
+margin-top:100px;
+
+
+}
+.mwd-description{
+    text-align:center;
+}
