@@ -7,8 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import{ProductService} from './services/product.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -24,16 +24,21 @@ import { ArchwizardModule } from 'ng2-archwizard';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { NouisliderModule } from 'ng2-nouislider';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
- {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
  {path:'shopping_cart', component: ShoppingCartComponent, canActivate:[AuthGuard]},
  {path:'contact-us', component: ContactUsComponent, canActivate:[AuthGuard]},
  {path:'payment-plans',component:PaymentPlansComponent, canActivate:[AuthGuard]},
- {path:'gallery',component:GalleryComponent}
+ {path:'gallery',component:GalleryComponent},
+ {path: 'product-details/:id',component:ProductDetailComponent},
+ {path: 'about-us', component:AboutComponent},
+ {path: 'cart', component: ShoppingCartComponent}
 
 ];
 
@@ -43,13 +48,15 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
     NavbarComponent,
     ShoppingCartComponent,
     ImageUploadComponent,
     ContactUsComponent,
     PaymentPlansComponent,
-    GalleryComponent
+    GalleryComponent,
+    ProductDetailComponent,
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,7 @@ const appRoutes: Routes = [
     NouisliderModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ValidateService,AuthService,AuthGuard],
+  providers: [ValidateService,AuthService,AuthGuard,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

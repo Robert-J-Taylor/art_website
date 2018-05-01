@@ -1,18 +1,21 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+
 const cors = require('cors');
 const passport =require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-const paypal = require('paypal-rest-sdk');
+//const MongoStore = require('connect-mongo')(session);
+//const paypal = require('paypal-rest-sdk');
 
-
+/*
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
     'client_id': 'AaU8tQfmz1_MFDTKuf84yYERXvdDt2ZFJVrxhNW_49DazF4A_F0VBuKyV5_nntyEdZqUa5Oq9ZBj65GV',
     'client_secret': 'EAZ8aFDU4lHHLy1bQqULYWqznf3dBknXZW3AH__zFC0bUs8AGUyR6RNbm-jHvqtikX7PsSqMO5vxuvKm'
   });
+*/
 
   mongoose.connect(config.database);
 
@@ -26,7 +29,7 @@ paypal.configure({
 const app = express();
 
 const users =require('./routes/users');
-
+const products = require('./routes/products')
 //Port Number//
 const port = 3000;
 
@@ -35,7 +38,7 @@ app.use(cors());
 
 //Set Static Folder
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'angular-src')));
 
 //Body Parser Middleware//
 app.use(bodyParser.json());
@@ -46,13 +49,20 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
+/*app.use(session({
+    secret: 'mysupersecret', 
+    resave: false, 
+    saveUninitialized: false,
+    store: new MongoStore({mongooseConnection: mongoose.connection}),
+    cookie: {maxAge:180*60*1000}
+}));*/
 
 app.use('/users', users);
-
+app.use('/products',products);
 
 
   
-  
+/*
 app.post('/pays', (req, res) => {
     const create_payment_json = {
       "intent": "sale",
@@ -121,14 +131,15 @@ app.post('/pays', (req, res) => {
   });
   
   app.get('/cancel', (req, res) => res.send('Cancelled'));
-
+*/
   //Index Route//
 app.get('/', (req,res) =>{
     res.send('Invalid Endpoint');
 });
+/*
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
-  });
+    res.sendFile(path.join(__dirname, 'angular-src/index.html'));
+  });*/
 app.listen(port, ()=> {
     console.log('Server started on port' + port);
 });

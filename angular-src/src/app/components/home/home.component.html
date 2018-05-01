@@ -19,7 +19,7 @@
         <h6 class="mwd-description" >Welcome to my shop! Please be sure to wipe your feet!</h6>
         <h5 class="description">We have over 20 unique items to choose from. Each individual piece has been handcrafted by us with the guarantee of top notch quality upon delivery. We offer a wide variety of 
             artwork from paintings to necklaces and jewelry. Stop by and take a look! </h5>
-        <button type="button" class="btn btn-default" style="margin-left:170px">View Gallery</button>
+        <button type="button" class="btn btn-default" style="margin-left:170px"><a [routerLink]="['/gallery']" style="color:white">View Gallery</a></button>
       </div>
     </div>
   </div>
@@ -44,14 +44,13 @@
                   </div>
                   <div class="card-body">
                       <p class="card-description">
-                          Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love the color mixtures, cards... everything. Keep up the great work!
+                         Great quality and beautiful! Got my items very fast. So happy I got these and I will be back for other things.
                       </p>
                       <div class="card-footer">
-                          <h4 class="card-title">Alec Thompson</h4>
-                          <h6 class="card-category">@alecthompson</h6>
+                          <h4 class="card-title">kellikaustic</h4>
                           <div class="card-avatar">
                               <a href="#pablo">
-                                  <img class="img" src="assets/img/faces/ayo-ogunseinde-2.jpg" />
+                                  <img class="img" src="assets/img/ecommerce/supporter1.jpg" />
                               </a>
                           </div>
                       </div>
@@ -106,163 +105,5 @@
       </div>
   </div>
 </div>
-
-
-<div class="subscribe-line subscribe-line-transparent" style="background-image: url('assets/img/default_logo_new.png'); height:300px;">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-9 col-sm-8">
-              <form class="">
-                  <div class="form-group">
-                      <input type="text" value="" style="margin-top:70px" class="form-control" placeholder="Enter your email...">
-                  </div>
-              </form>
-          </div>
-          <div class="col-md-3 col-sm-4">
-              <button type="button" class="btn btn-info btn-block btn-round" style="background-color:dimgrey;margin-top:80px">Send Feedback</button>
-          </div>
-      </div>
-  </div>
-</div>
-
-<footer class="footer footer-black footer-big">
-    <div class="container" >
-        <div class="row">
-            <div class="col-md-2 text-center col-sm-3 col-12 ml-auto mr-auto">
-                <h4>ModernWolfDesign</h4>
-                <div class="social-area">
-                    <a class="btn btn-just-icon btn-round btn-facebook">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-just-icon btn-round btn-twitter">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-just-icon btn-round btn-google">
-                        <i class="fa fa-google-plus" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-9 col-12 ml-auto mr-auto">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-6">
-                        <div class="links">
-                            <ul class="uppercase-links stacked-links">
-                                <li>
-                                    <a href="#paper-kit" >
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                        Discover
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                        Live Support
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                        Money Back
-                                    </a>
-                                </li>
-                            </ul>
-  
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-6">
-                        <div class="links">
-                            <ul class="uppercase-links stacked-links">
-                                <li>
-                                    <a href="#paper-kit">
-                                       Contact Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                       We're Hiring
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                       About Us
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-6">
-                        <div class="links">
-                            <ul class="uppercase-links stacked-links">
-                                <li>
-                                    <a href="#paper-kit">
-                                        Portfolio
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                       How it works
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#paper-kit">
-                                       Testimonials
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-6">
-                        <div class="links">
-                            <ul class="stacked-links">
-                                <li>
-                                    <h4>13.723<br /> <small>accounts</small></h4>
-                                </li>
-                                <li>
-                                    <h4>55.234<br /> <small>downloads</small></h4>
-                                </li>
-  
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="copyright">
-                    <div class="pull-left">
-                        &copy; {{data | date: 'yyyy'}} Creative Tim, made with love
-                    </div>
-                    <div class="links pull-right">
-                        <ul>
-                            <li>
-                                <a href="#paper-kit">
-                                    Company Policy
-                                </a>
-                            </li>
-                            |
-                            <li>
-                                <a href="#paper-kit">
-                                    Terms
-                                </a>
-                            </li>
-                            |
-                            <li>
-                                <a href="#paper-kit">
-                                    Privacy
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-  
-    </div>
-  </footer>
 </div>
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{ProductService} from '../../services/product.service'
+
 declare interface Table_With_Checkboxes {
   id?: number;
   check: boolean;
@@ -23,13 +25,18 @@ declare interface TableData2 {
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  
+  shoppingCart: any=[];
   public tableData3: TableData;
-
-  constructor() { }
+  total: number =0;
+  constructor(private productService: ProductService) { }
 
   
   ngOnInit() {
+    this.shoppingCart = this.productService.getCart();
+  	for(var a = 0; a < this.shoppingCart.length; a++) {
+  		this.total += this.shoppingCart[a].total;
+  	}
+
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('presentation-page');
     body.classList.add('loading');
@@ -66,5 +73,9 @@ showElements() {
     for( var i = 0; i < this.tableData3.dataRows.length; i++ ){
         console.log(this.tableData3.dataRows[i][1])
     }
+}
+emptyCart() {
+  this.productService.emptyCart();
+  this.shoppingCart = [];
 }
 }

@@ -1,0 +1,183 @@
+<div class="wrapper">
+ <!-- <div class="page-header page-header-xs" style="background-image: url('./assets/img/sections/clark-street-mercantile.jpg');">-->
+    <div class="page-header page-header-xs" style="background-color:black;height:100px;">
+		<div class="filter"></div>
+	</div>
+    <div class="main">
+        <div class="section">
+            <div class="container">
+                  <br><br><br>
+                    <div class="row">
+                        <div class="col-md-7 col-sm-6">
+
+                            <div id="carousel" class="ml-auto mr-auto">
+								<div class="card page-carousel">
+									<ngb-carousel>
+			                            <ng-template ngbSlide>
+											<img class="d-block img-fluid" src="{{product.imagePath}}" alt="Awesome Item">
+											<div class="carousel-caption d-none d-md-block">
+												<p></p>
+											</div>
+			                            </ng-template>
+			                            <ng-template ngbSlide>
+											<img class="d-block img-fluid" src="{{product.imagePath2}}" alt="Awesome Item">
+											<div class="carousel-caption d-none d-md-block">
+												<p></p>
+											</div>
+                                  </ng-template>
+                          
+			                            <ng-template ngbSlide >
+                      <img class="d-block img-fluid" src="{{product.imagePath3}}" alt="Awesome Item">
+											<div class="carousel-caption d-none d-md-block">
+												<p></p>
+                      </div>
+                                  </ng-template>
+                                 
+                    <ng-template ngbSlide >
+											<img class="d-block img-fluid" src="{{product.imagePath4}}" alt="Awesome Item">
+											<div class="carousel-caption d-none d-md-block">
+												<p></p>
+                      </div>
+                    </ng-template>
+			                        </ngb-carousel>
+								</div>
+                            </div> <!-- end carousel -->
+
+                        </div>
+                        <div class="col-md-5 col-sm-6">
+							<h1>{{product.title}}</h1>
+						<!--	<h4 class="price" style="color:green"><strong>$ {{product.price}}</strong></h4>-->
+              <hr />
+              <h3>Description:</h3>
+							<p>{{product.description2}}
+              </p>
+              <h4>Product Details:</h4>
+              <ul>
+                <li>Handmade item</li>
+                <li>{{product.height}}</li>
+                <li>{{product.width}}</li>
+                <li>{{product.material}}</li>
+              </ul>
+              
+							<span class="label label-success shipping"> $ {{product.price}}</span> 
+                            <br><br>
+                            <div class="row">
+                                <div class="col-md-7 offset-md-5 col-sm-8">
+                                    <button class="btn btn-danger btn-block btn-round">Checkout &nbsp;<i class="fa fa-chevron-right"></i></button>
+                                    <a class="btn btn-success" (click)="addToCart()">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="row card-body-row">
+                    <div class="col-md-4 col-sm-4">
+                       <div class="info">
+                            <div class="icon icon-warning">
+                                <i class="nc-icon nc-delivery-fast"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title"> 2 Days Delivery </h4>
+                                <p>Spend your time generating new ideas. You don't have to think of implementing anymore.</p>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                       <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-credit-card"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title"> Refundable Policy </h4>
+                                <p>If a product is stolen, significantly damaged, or lost during shipping, we guarantee a full refund.</p>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                       <div class="info">
+                            <div class="icon icon-success">
+                                <i class="nc-icon nc-bulb-63"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title"> Great Reviews </h4>
+                                <p>Go checkout what previous customers think about my artwork on my homepage.</p>
+                            </div>
+                       </div>
+                    </div>
+                </div>               
+                <div class="faq">
+
+                    <h4>Frequently Asked Questions</h4> <br/>
+					<ngb-accordion #acc="ngbAccordion">
+						<ngb-panel>
+							<ng-template ngbPanelTitle>
+								<h5 class="mb-0 panel-title">
+									<a class="collapsed">
+										Do you accept artwork from other artists?
+										<i class="nc-icon nc-minimal-down"></i>
+									</a>
+								</h5>
+							</ng-template>
+							<ng-template ngbPanelContent>
+                 As of right now I will only be selling my own handmade artwork, in the future this may change and we will update you in our
+                 newsletter if that is the case.
+							</ng-template>
+						</ngb-panel>
+						<ngb-panel>
+							<ng-template ngbPanelTitle>
+								<h5 class="mb-0 panel-title">
+									<a class="collapsed">
+										How long will shipping take?
+										<i class="nc-icon nc-minimal-down"></i>
+									</a>
+								</h5>
+							</ng-template>
+							<ng-template ngbPanelContent>
+                Shipping time will depend on the location from which you're purchasing and what day of the week it is. You can typically expect 3-5 Days
+                for the artwork to arrive.
+							</ng-template>
+						</ngb-panel>
+						<ngb-panel>
+							<ng-template ngbPanelTitle>
+								<h5 class="mb-0 panel-title">
+									<a class="collapsed">
+										Can we refund a product that is not to our liking?
+										<i class="nc-icon nc-minimal-down"></i>
+									</a>
+								</h5>
+							</ng-template>
+							<ng-template ngbPanelContent>
+                Yes, if you recieve artwork that is not to your liking we allow refunds for up to 2 weeks given the artwork maintains the same quality
+                as when it was originally shipped.
+							</ng-template>
+						</ngb-panel>
+					</ngb-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---
+<footer class="footer section-black">
+	<div class="container">
+		<div class="row">
+			<nav class="footer-nav">
+				<ul>
+					<li><a href="https://www.creative-tim.com">Creative Tim</a></li>
+					<li><a href="http://blog.creative-tim.com">Blog</a></li>
+					<li><a href="https://www.creative-tim.com/license">Licenses</a></li>
+				</ul>
+			</nav>
+			<div class="credits ml-auto">
+				<span class="copyright">
+					© {{data | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by Creative Tim
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>-->

@@ -1,6 +1,9 @@
 import { Component, Renderer,OnInit } from '@angular/core';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import {Product} from '../../../Product';
+import{ProductService} from '../../services/product.service'
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -9,12 +12,23 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 export class GalleryComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  products: Product[];
+  
+  productId: Product[];
 
   doubleSlider = [1000, 5000];
-  constructor( private renderer : Renderer, config: NgbAccordionConfig) { 
+  constructor( private productService: ProductService, private renderer : Renderer, config: NgbAccordionConfig) { 
+    this.productService.getProducts()
+    .subscribe(products => {
+        console.log(products);
+        this.products = products;
+    })
+    
+    
 
   config.closeOthers = true;
         config.type = 'info';}
+
   ngOnInit() {
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('presentation-page');
@@ -25,7 +39,7 @@ export class GalleryComponent implements OnInit {
       {
           width: '600px',
           height: '400px',
-          thumbnailsColumns: 4,
+          thumbnailsColumns: 5,
           imageAnimation: NgxGalleryAnimation.Slide
       },
       // max-width 800
@@ -61,44 +75,44 @@ export class GalleryComponent implements OnInit {
   
   this.galleryImages = [
     {
-        small: './assets/img/gallery/outfit-gucci.jpg',
-        medium: './assets/img/gallery/outfit-gucci.jpg',
-        big: './assets/img/gallery/outfit-gucci.jpg'
+        small: './assets/img/gallery/blue_painting.jpg',
+        medium: './assets/img/gallery/blue_painting.jpg',
+        big: './assets/img/gallery/blue_painting.jpg'
     },
     {
-        small: './assets/img/gallery/outfit-paul-smith.jpg',
-        medium: './assets/img/gallery/outfit-paul-smith.jpg',
-        big: './assets/img/gallery/outfit-paul-smith.jpg'
+        small: './assets/img/gallery/painting.jpg',
+        medium: './assets/img/gallery/painting.jpg',
+        big: './assets/img/gallery/painting.jpg'
     },
     {
-        small: './assets/img/gallery/outfit-maison-margiela.jpg',
-        medium: './assets/img/gallery/outfit-maison-margiela.jpg',
-        big: './assets/img/gallery/outfit-maison-margiela.jpg'
+        small: './assets/img/gallery/green_painting.jpg',
+        medium: './assets/img/gallery/green_painting.jpg',
+        big: './assets/img/gallery/green_painting.jpg'
     },
     {
-        small: './assets/img/gallery/outfit-burberry.jpg',
-        medium: './assets/img/gallery/outfit-burberry.jpg',
-        big: './assets/img/gallery/outfit-burberry.jpg'
+        small: './assets/img/gallery/earth_painting.jpg',
+        medium: './assets/img/gallery/earth_painting.jpg',
+        big: './assets/img/gallery/earth_painting.jpg'
     },
     {
-        small: './assets/img/gallery/ressence.jpg',
-        medium: './assets/img/gallery/ressence.jpg',
-        big: './assets/img/gallery/ressence.jpg'
+        small: './assets/img/gallery/grey_painting.jpg',
+        medium: './assets/img/gallery/grey_painting.jpg',
+        big: './assets/img/gallery/grey_painting.jpg'
     },
     {
-        small: './assets/img/gallery/gucci-sun.jpg',
-        medium: './assets/img/gallery/gucci-sun.jpg',
-        big: './assets/img/gallery/gucci-sun.jpg'
+        small: './assets/img/gallery/purple_green_painting.jpg',
+        medium: './assets/img/gallery/purple_green_painting.jpg',
+        big: './assets/img/gallery/purple_green_painting.jpg'
     },
     {
-        small: './assets/img/gallery/bottega.jpg',
-        medium: './assets/img/gallery/bottega.jpg',
-        big: './assets/img/gallery/bottega.jpg'
+        small: './assets/img/gallery/purple_painting.jpg',
+        medium: './assets/img/gallery/purple_painting.jpg',
+        big: './assets/img/gallery/purple_painting.jpg'
     },
     {
-        small: './assets/img/gallery/bracelet.jpg',
-        medium: './assets/img/gallery/bracelet.jpg',
-        big: './assets/img/gallery/bracelet.jpg'
+        small: './assets/img/gallery/white_painting.jpg',
+        medium: './assets/img/gallery/white_painting.jpg',
+        big: './assets/img/gallery/white_painting.jpg'
     }
   ];
   }

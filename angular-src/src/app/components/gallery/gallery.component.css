@@ -1,0 +1,30 @@
+.wrapper{
+background-color:#000000;
+};
+.section .latest-offers{
+    background-color:#000000;
+}
+.card-title{
+    color:white;
+}
+.price{
+    color:greenyellow;
+}
+.title{
+    color:white;
+    font-size:45px;
+    font-style:bold;
+    text-align: center;
+    padding-top:100px;
+    margin-bottom:200px;
+}
+hr{
+    border-top: 3px double #ffffff;
+    margin:0px;
+    padding:0px;
+}
+.text-center{
+    color:white;
+    padding:100px;
+
+}

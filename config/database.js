@@ -1,4 +1,4 @@
 module.exports = {
-database: 'mongodb://localhost:27017designerwebsite_new',
+database: 'mongodb://localhost:27017/artproject',
 secret: 'coolcool1234'
 };
