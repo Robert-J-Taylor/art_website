@@ -5,6 +5,35 @@
 
   <div class="section latest-offers" style="background-color:#000000;">
    <div class="container">
+       <br><br><br><br>
+       <div class="row">
+       <div ngbDropdown class="dropdown">
+            <div class="dropdown-toggle btn btn-round" style="background-color:black" ngbDropdownToggle>Category<b class="caret"></b></div>
+            <div ngbDropdownMenu class="dropdown-primary dropdown">
+                <a class="dropdown-item" (click)="displayAll()" >All</a>
+                <a class="dropdown-item" (click)="displayPendants()" >Pendants</a>
+                <a class="dropdown-item" (click)="displayPaintings()" >Paintings</a>
+                <a class="dropdown-item" (click)="displayMagnets()">Magnets</a>
+            </div>
+        </div>
+        <div ngbDropdown class="dropdown">
+                <div class="dropdown-toggle btn btn-round" style="background-color:black" ngbDropdownToggle>Sort<b class="caret"></b></div>
+                <div ngbDropdownMenu class="dropdown-primary dropdown">
+                    <a class="dropdown-item" (click)="displayAll()" >Cheapest Products</a>
+                    <a class="dropdown-item" (click)="displayPendants()" >Most Expensive Products</a>
+                    <a class="dropdown-item" (click)="displayPaintings()" >A-Z</a>
+                    <a class="dropdown-item" (click)="displayMagnets()">Z-A</a>
+                </div>
+            </div>
+        </div>
+
+    <!--   <button (click)="displayAll()">All</button>
+       <button (click)="displayPendants()">Pendants</button>
+       <button (click)="displayPaintings()">Paintings</button>
+       <button (click)="displayMagnets()">Magnets</button>-->
+        <h3 class="section-title">{{title}}</h3>
+       <br>
+      
           <div class="row">
                 <div class="col-md-4" *ngFor="let product of products">
                     <div class="card card-product card-plain">

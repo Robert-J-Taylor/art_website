@@ -1,7 +1,8 @@
 import { Component, Renderer,OnInit } from '@angular/core';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
-import {Product} from '../../../Product';
+//import {Product} from '../../../Product';
+import {Product} from '../../../../../models/product'
 import{ProductService} from '../../services/product.service'
 
 @Component({
@@ -13,8 +14,9 @@ export class GalleryComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
   products: Product[];
-  
+  title: String;
   productId: Product[];
+  sortedProduct: any;
 
   doubleSlider = [1000, 5000];
   constructor( private productService: ProductService, private renderer : Renderer, config: NgbAccordionConfig) { 
@@ -22,6 +24,7 @@ export class GalleryComponent implements OnInit {
     .subscribe(products => {
         console.log(products);
         this.products = products;
+        this.title = "Full Collection"
     })
     
     
@@ -29,7 +32,45 @@ export class GalleryComponent implements OnInit {
   config.closeOthers = true;
         config.type = 'info';}
 
+displayAll(){
+    this.productService.getProducts()
+    .subscribe(products => {
+        console.log(products);
+        this.products = products;
+        this.title = "Full Collection"
+    })
+}
+//filter options
+displayPendants(){
+    this.productService.getPendants()
+    .subscribe(pendants=>{
+        console.log(pendants);
+        this.products=pendants;
+        this.title="Pendants"
+    });
+  }
+
+  displayPaintings(){
+    this.productService.getPaintings()
+    .subscribe(paintings=>{
+        console.log(paintings);
+        this.products=paintings;
+        this.title="Paintings"
+    })
+  }
+
+  displayMagnets(){   this.productService.getMagnets()
+    .subscribe(magnets=>{
+        console.log(magnets);
+        this.products=magnets;
+        this.title="Magnets"
+    })}
+
   ngOnInit() {
+
+  
+
+    //navbar and slideshow view
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('presentation-page');
     body.classList.add('loading');

@@ -12,10 +12,20 @@ export class ProductService{
     getProducts(){
         return this.http.get('http://localhost:3000/products/gallery')
         .map(res=> res.json());
-
-        
     }
-   // possibly change
+    getPaintings(){
+      return this.http.get('http://localhost:3000/products/paintings')
+      .map(res=> res.json());
+    }
+    getPendants(){
+      return this.http.get('http://localhost:3000/products/pendants')
+      .map(res=> res.json());
+    }
+    getMagnets(){
+      return this.http.get('http://localhost:3000/products/magnets')
+      .map(res=> res.json());
+    }
+
   showProduct(id) {
     return new Promise((resolve, reject) => {
         this.http.get('http://localhost:3000/products/gallery/' + id)

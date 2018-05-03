@@ -10,6 +10,7 @@ var schema = new Schema({
     title: {type: String, required: true},
     description: {type: String, required: true},
     description2:{type: String, required:true},
+    type:{type: String, required: true},
     height:{type: String, required:true},
     width:{type: String, required:true},
     material:{type:String, required:true},
