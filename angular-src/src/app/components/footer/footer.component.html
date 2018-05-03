@@ -1,54 +1,67 @@
-<footer class="footer footer-big">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-6 col-sm-9">
-              <div class="links">
-                  <ul class="uppercase-links">
-                      <li>
-                          <a href="#">
-                              Home
-                          </a>
-                      </li>
-                      <li>
-                          <a [routerLink] ="['/about-us']">
-                              About Us
-                          </a>
-                      </li>
-                      <li>
-                          <a [routerLink]="['/gallery']">
-                              Gallery
-                          </a>
-                      </li>
-                      <li>
-                          <a [routerLink]="['/contact-us']">
-                             Contact Us
-                          </a>
-                      </li>
-                  </ul>
-                  <hr />
 
-                  <div class="copyright">
-                      © {{data | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by ModernWolfDesign
-                  </div>
-              </div>
-          </div>
+<footer class="footer footer-black footer-big">
 
-          <div class="col-md-4 ml-auto col-sm-2">
-              <div class="social-area">
-                  <a href="#facebook" class="btn btn-neutral btn-round btn-just-icon btn-facebook">
-                     <i class="fa fa-facebook" aria-hidden="true"></i>
-                 </a>
-                  <a href="#twitter" class="btn btn-neutral btn-just-icon btn-round btn-twitter">
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="#google" class="btn btn-neutral btn-just-icon btn-round btn-google">
-                      <i class="fa fa-google-plus" aria-hidden="true"></i>
-                  </a>
-                  <a href="#pin" class="btn btn-neutral btn-just-icon btn-round btn-pinterest">
-                      <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                  </a>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 ml-auto mr-auto">
+                <div class="logo text-center">
+                    <h3>ModernWolfDesigns</h3>
+                </div>
+            </div>
+            <div class="col-md-6 offset-md-2 col-sm-8">
+                <div class="links">
+                        <ul>
+                                <li>
+                                    <a href="#">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink] ="['/about-us']">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/gallery']">
+                                        Gallery
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/contact-us']">
+                                       Contact Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/shopping_cart']">
+                                Shopping Cart
+                            </a>
+                                </li>
+                            </ul>
+                    <hr />
+                    <div class="copyright">
+                        <div class="pull-left">
+                            © {{data | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by ModernWolfDesigns
+                        </div>
+                        <div class="pull-right">
+                            <ul>
+                                <li>
+                                    <button class="btn btn-just-icon btn-border btn-facebook">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                                
+                                <li>
+                                  
+                                    <button class="btn btn-just-icon btn-border btn-instagram">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </footer>
