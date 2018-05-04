@@ -4,7 +4,8 @@
           <div class="navbar-translate">
               <div class="navbar-header">
                  <span [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-                      <a class="navbar-brand" [routerLink]="['/']">ModernWolfDesigns</a>
+                   <!--   <a class="navbar-brand" [routerLink]="['/']">ModernWolfDesigns</a>-->
+                   <img src="./assets/img/ecommerce/logo.png" [routerLink] ="['/']" style="height:60px;width:80px;">
                  </span>
               </div>
               <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
