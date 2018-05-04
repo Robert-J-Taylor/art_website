@@ -1,3 +1,20 @@
 .title{
     padding-top:50px;
 }
+.section-gray{
+    background-color: #151f20;
+    color:white;
+}
+.td-number{
+    color:white;
+}
+.td-number .td-quantity{
+    color:white
+}
+.td-price{
+    color:white;
+
+}
+.td-total{
+    color:white;
+}
