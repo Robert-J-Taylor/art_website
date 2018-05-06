@@ -5,9 +5,16 @@
         
     <div class="container tim-container">
 <div class="row">
-    <div class="text-center" *ngIf ="shoppingCart.length ==0">
-        <h2 style="padding-top:50px;">Your Cart is Empty</h2>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class = "row" *ngIf ="shoppingCart.length ==0">
+        <div class="container">
+                <h2 style="padding-top:50px;">Your Cart is Empty.....</h2>
+   
+                <p>Check out our gallery and add to your cart!</p>
+                <br>
+                <button class="btn btn-default btn-lg">View Gallery</button>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        
     </div>
     <div class="col-md-10 ml-auto mr-auto">
         <div class="table-responsive" style="margin-top:50px;">

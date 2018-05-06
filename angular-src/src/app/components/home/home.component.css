@@ -14,11 +14,11 @@ text-align:center;
     background-color:black;
     margin-left:500px;
 }
-
 .centered{
-    position :absolute;
-    margin-left: 250px;
-  
+position: absolute;
+top: 50%;
+left: 50%;
+margin-top:-300px;
+margin-left:-700px;
 
-  
 }

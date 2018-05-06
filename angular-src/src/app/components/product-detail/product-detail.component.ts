@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 product = {}
+shoppingCart = false;
   constructor(private route: ActivatedRoute, private router: Router, private productService:ProductService, private renderer : Renderer) { }
 
   ngOnInit(){
@@ -25,7 +26,7 @@ product = {}
   }
   addToCart(){
     this.productService.addToCart(this.product);
-    alert("Successfully added");
+    this.shoppingCart = true;
   }
 getProductDetail(id){
   this.productService.showProduct(id).then((res) =>{

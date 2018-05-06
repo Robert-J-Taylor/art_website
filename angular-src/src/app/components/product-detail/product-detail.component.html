@@ -64,7 +64,8 @@
                             <div class="row">
                                 <div class="col-md-7 offset-md-5 col-sm-8">
                                     <button class="btn btn-danger btn-block btn-round">Checkout &nbsp;<i class="fa fa-chevron-right"></i></button>
-                                    <a class="btn btn-success" (click)="addToCart()">Add To Cart</a>
+                                    <button class="btn btn-success btn-block btn-round" *ngIf="shoppingCart==false" (click)="addToCart()">Add To Cart</button>
+                                    <button class="btn btn-success btn-block btn-round" *ngIf="shoppingCart" >Successfully Added!</button>
                                 </div>
                             </div>
                         </div>
@@ -162,22 +163,4 @@
     </div>
 </div>
 
-<!---
-<footer class="footer section-black">
-	<div class="container">
-		<div class="row">
-			<nav class="footer-nav">
-				<ul>
-					<li><a href="https://www.creative-tim.com">Creative Tim</a></li>
-					<li><a href="http://blog.creative-tim.com">Blog</a></li>
-					<li><a href="https://www.creative-tim.com/license">Licenses</a></li>
-				</ul>
-			</nav>
-			<div class="credits ml-auto">
-				<span class="copyright">
-					© {{data | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by Creative Tim
-				</span>
-			</div>
-		</div>
-	</div>
-</footer>-->
+
