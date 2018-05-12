@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const session = require('express-session');
 const cors = require('cors');
 const passport =require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-//const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 //const paypal = require('paypal-rest-sdk');
 
 /*
@@ -46,6 +46,15 @@ app.use(bodyParser.json());
 //Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
+/*
+app.use(session({
+secret: 'secret', 
+resave: false, 
+saveUninitialized:false,
+store:new MongoStore({mongooseConnection:mongoose.connection}),
+cookie:{maxAge:180*60*1000}
+}));
+*/
 
 require('./config/passport')(passport);
 

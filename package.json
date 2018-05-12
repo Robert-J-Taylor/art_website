@@ -10,9 +10,11 @@
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
+    "connect-mongo": "^2.0.1",
     "cors": "*",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",

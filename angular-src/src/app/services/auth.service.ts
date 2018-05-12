@@ -3,13 +3,13 @@ import {Http, Headers} from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { tokenNotExpired } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
-
+import {Router} from '@angular/router';
 @Injectable()
 export class AuthService {
 
   authToken : any;
   user: any;
-  
+  router:Router;
   constructor(private http: Http) {
 
    }
@@ -56,5 +56,7 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+    this.router.navigate(['/']);
+
   }
 }

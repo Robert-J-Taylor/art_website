@@ -4,7 +4,8 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 //import {Product} from '../../../Product';
 import {Product} from '../../../../../models/product'
 import{ProductService} from '../../services/product.service'
-
+import {AuthService} from '../../services/auth.service';
+import{Router} from '@angular/router';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -15,11 +16,11 @@ export class GalleryComponent implements OnInit {
   galleryImages: NgxGalleryImage[];
   products: Product[];
   title: String;
+  editMode = false;
   productId: Product[];
   sortedProduct: any;
-
   doubleSlider = [1000, 5000];
-  constructor( private productService: ProductService, private renderer : Renderer, config: NgbAccordionConfig) { 
+  constructor( private productService: ProductService, private renderer : Renderer, config: NgbAccordionConfig,private authService: AuthService,private router:Router) { 
     this.productService.getProducts()
     .subscribe(products => {
         console.log(products);
@@ -27,11 +28,13 @@ export class GalleryComponent implements OnInit {
         this.title = "Full Collection"
     })
     
-    
-
   config.closeOthers = true;
         config.type = 'info';}
 
+enableEditMode(){
+    this.editMode = !this.editMode;
+
+}
 displayAll(){
     this.productService.getProducts()
     .subscribe(products => {
@@ -65,6 +68,16 @@ displayPendants(){
         this.products=magnets;
         this.title="Magnets"
     })}
+
+  removeProduct(id){
+  this.productService.deleteProduct(id).then((result)=>{
+ console.log("Product with id " + id + " removed!")
+ this.router.navigate
+  },(err)=>{
+      console.log(err);
+      this.displayAll();
+  })
+  }
 
   ngOnInit() {
 
@@ -167,5 +180,6 @@ displayPendants(){
       var navbar = document.getElementsByTagName('nav')[0];
       navbar.classList.remove('navbar-transparent');
       navbar.classList.remove('bg-danger');
-  } }
+  } 
+}
   

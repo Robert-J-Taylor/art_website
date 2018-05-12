@@ -25,6 +25,10 @@
                     <a class="dropdown-item" (click)="displayMagnets()">Z-A</a>
                 </div>
             </div>
+            <div *ngIf="authService.loggedIn()">
+            <div class ="btn btn-round" (click)="enableEditMode()" *ngIf="!editMode"  style="background-color:black">Enable Edit Mode</div>
+            <div class ="btn btn-round" (click)="enableEditMode()" *ngIf="editMode"  style="background-color:black">Disable Edit Mode</div>
+            </div>
         </div>
 
     <!--   <button (click)="displayAll()">All</button>
@@ -48,10 +52,11 @@
                                 </div>
                                 <div class="price">
                                     <b>{{product.price}} $</b>  
-                                    <a class="btn btn-basic pull-right" [routerLink]="['/product-details', product._id]" style="background-color:black;" role="button">View Details</a>
+                                    <a class="btn btn-basic pull-right" *ngIf="!editMode" [routerLink]="['/product-details', product._id]" style="background-color:black;" role="button">View Details</a>
+                                    <a class="btn btn-basic pull-right" *ngIf="editMode" [routerLink]="['/edit-product', product._id]" style ="background-color:black;" role="button">Edit Product</a>
+                                    <a class="btn btn-basic pull-right" (click)="removeProduct(product._id)" *ngIf="editMode" style ="background-color:red;" role="button">Delete Product</a>
                                 </div>
-                                <div class="product-details">
-                                   
+                                <div class="product-details">      
                                 </div>
                             </div>
                         </div>

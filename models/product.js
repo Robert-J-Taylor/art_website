@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 
 var schema = new Schema({
-    imagePath: {type: String, required: true},
+    imagePath: {type: String, required: false},
     imagePath2:{type: String, required: false},
     imagePath3:{type: String, required:false},
     imagePath4:{type:String, required:false},

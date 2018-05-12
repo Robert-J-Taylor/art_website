@@ -32,10 +32,11 @@
                    </li>
                    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" >
                         <a class="nav-link" [routerLink]="['/cart']">
-                            <i class="nc-icon nc-cart-simple"></i> Shopping Cart
+                            <i class="nc-icon nc-cart-simple"></i> Cart
                         </a>
                   </li>
-                 <!-- <li *ngIf="authService.loggedIn()" class ="nav-item"><a (click)="onLogoutClick()"class="nav-link" href="#">Logout</a></li>-->
+                  <li *ngIf="authService.loggedIn()" class ="nav-item"><a class="nav-link" [routerLink]="['/add-product']">Add Product</a></li>
+                 <li *ngIf="authService.loggedIn()" class ="nav-item"><a (click)="onLogoutClick()"class="nav-link" href="#">Logout Admin</a></li>
                
    
               </ul>

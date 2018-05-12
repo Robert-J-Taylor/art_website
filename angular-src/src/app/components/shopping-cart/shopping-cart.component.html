@@ -67,7 +67,7 @@
                        <td colspan="2" class="text-right">
                            <button type ="button" class="btn btn-danger btn-lg" (click)="emptyCart()">Clear All</button>
                            <br>
-                           <button type="button" class="btn btn-success btn-lg" (click)="showElements()">Complete Purchase <i class="fa fa-chevron-right"></i></button>
+                           <button type="button" class="btn btn-success btn-lg" [routerLink]="['/checkout']">Complete Purchase <i class="fa fa-chevron-right"></i></button>
                            
                        </td>
                     </tr>

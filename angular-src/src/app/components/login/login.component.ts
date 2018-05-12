@@ -47,7 +47,7 @@ ngOnDestroy(){
         this.flashMessage.show('You are now logged in', {
           cssClass: 'alert-success',
           timeout: 3000});
-        this.router.navigate(['/']);
+        this.router.navigate(['add-product']);
       } else {
         this.flashMessage.show(data.msg, {
           cssClass: 'alert-danger',

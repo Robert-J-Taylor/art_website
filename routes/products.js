@@ -12,7 +12,25 @@ router.get('/gallery', function (req, res, next) {
     console.log(docs);
     });
 });
+router.post('/gallery',function(req,res,next){
+    Product.create(req.body, function(err,post){
+        if(err) return next(err);
+        res.json(post);
+    })
+})
+router.put('/gallery/:id',function(req,res,next){
+    Product.findByIdAndUpdate(req.params.id,req.body,function(err,post){
+        if(err) return next(err);
+        res.json(post);
+    })
+} )
 
+router.delete('/gallery/:id', function(req,res,next){
+    Product.findByIdAndRemove(req.params.id,req.body,function(err,post){
+        if(err) return next(err);
+        res.json(post);
+    })
+})
 router.get('/gallery/:id', function(req,res,next){
     Product.findById(req.params.id, function(err,docs){
         if(err) return next(err);
@@ -38,4 +56,5 @@ router.get('/paintings', function(req,res,next){
         })
     })
 })
+
  module.exports = router;

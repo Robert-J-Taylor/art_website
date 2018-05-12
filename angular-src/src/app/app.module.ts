@@ -27,18 +27,24 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path:'add-product',component:AdminComponent,canActivate:[AuthGuard]},
+  {path:'checkout',component:CheckoutComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'admin-login', component: LoginComponent},
  {path:'shopping_cart', component: ShoppingCartComponent, canActivate:[AuthGuard]},
- {path:'contact-us', component: ContactUsComponent, canActivate:[AuthGuard]},
+ {path:'contact-us', component: ContactUsComponent},
  {path:'payment-plans',component:PaymentPlansComponent, canActivate:[AuthGuard]},
  {path:'gallery',component:GalleryComponent},
  {path: 'product-details/:id',component:ProductDetailComponent},
  {path: 'about-us', component:AboutComponent},
- {path: 'cart', component: ShoppingCartComponent}
+ {path: 'cart', component: ShoppingCartComponent},
+ {path:'edit-product/:id',component:EditProductComponent}
 
 ];
 
@@ -56,7 +62,10 @@ const appRoutes: Routes = [
     GalleryComponent,
     ProductDetailComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    CheckoutComponent,
+    AdminComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
